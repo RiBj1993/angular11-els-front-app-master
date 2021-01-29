@@ -1,0 +1,86 @@
+<div>
+  <div *ngIf="currentPerson._id" class="edit-form">
+    <h4>Person</h4>
+    <form>
+      <div class="form-group">
+        <label for="firstName">firstName</label>
+        <input
+          type="text"
+          class="form-control"
+          id="firstName"
+          [(ngModel)]="currentPerson.firstName"
+          name="firstName"
+        />
+      </div>
+      <div class="form-group">
+        <label for="lastName">lastName</label>
+        <input
+          type="text"
+          class="form-control"
+          id="lastName"
+          [(ngModel)]="currentPerson.lastName"
+          name="lastName"
+        />
+      </div>
+      <div class="form-group">
+        <label for="age">Age</label>
+        <input
+          type="text"
+          class="form-control"
+          id="age"
+          [(ngModel)]="currentPerson.age"
+          name="age"
+        />
+      </div>
+      <div class="form-group">
+        <label for="city">city</label>
+        <input
+          type="text"
+          class="form-control"
+          id="city"
+          [(ngModel)]="currentPerson.city"
+          name="City"
+        />
+      </div>
+
+
+    <!--   <div class="form-group">
+        <label><strong>Status:</strong></label>
+        {{ currentPerson.published ? "Published" : "Pending" }}
+      </div> -->
+    </form>
+
+<!--     <button
+      class="badge badge-primary mr-2"
+      *ngIf="currentPerson.published"
+      (click)="updatePublished(false)"
+    >
+      UnPublish
+    </button>
+    <button
+      *ngIf="!currentPerson.published"
+      class="badge badge-primary mr-2"
+      (click)="updatePublished(true)"
+    >
+      Publish
+    </button> -->
+
+    <button class="badge badge-danger mr-2" (click)="deletePerson()">
+      Delete
+    </button>
+
+    <button
+      type="submit"
+      class="badge badge-success mb-2"
+      (click)="updatePerson()"
+    >
+      Update
+    </button>
+    <p>{{ message }}</p>
+  </div>
+
+  <div *ngIf="!currentPerson._id">
+    <br />
+    <p>Cannot access this Person...</p>
+  </div>
+</div>
